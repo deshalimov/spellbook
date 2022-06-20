@@ -26,6 +26,7 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
     :time,
     :durations,
     :area,
+    :damage,
     :user_id
   ]
 
@@ -41,6 +42,7 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
     field :time,       :string
     field :durations,  :string
     field :area,       :integer
+    field :damage,     :string
     belongs_to :user, User
 
     # Принадлежит классу User
@@ -82,15 +84,15 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
     |> cast(attrs, @required)
     |> validate_required(@required)
 
-    |> validate_format(:name, less_than_or_equal_to: 30, greater_than_or_equal_to: 1)
-    #|> validate_format(:level, ~r/^[0-9]{1,20}$/, message: "invalid_format")
-    |> validate_format(:level, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    |> validate_format(:schools, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    |> validate_format(:components, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    |> validate_format(:time, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    |> validate_format(:durations, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    |> validate_format(:area, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    |> assoc_constraint(:user)
+    # |> validate_format(:name, less_than_or_equal_to: 30, greater_than_or_equal_to: 1)
+    # #|> validate_format(:level, ~r/^[0-9]{1,20}$/, message: "invalid_format")
+    # |> validate_format(:level, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> validate_format(:schools, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> validate_format(:components, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> validate_format(:time, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> validate_format(:durations, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> validate_format(:area, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> assoc_constraint(:user)
     # |> unique_constraint(:email, message: "taken")
     # |> validate_format(:password, ~r/^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}/,
     #   message: "invalid_format"
