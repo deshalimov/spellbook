@@ -21,7 +21,7 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
   @required [
     :name,
     :level,
-    :schools,
+    :school_id,
     :components,
     :time,
     :durations,
@@ -37,12 +37,13 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
 
     field :name,       :string
     field :level,      :integer
-    field :schools,    :string
     field :components, :string
     field :time,       :string
     field :durations,  :string
     field :area,       :integer
     field :damage,     :string
+
+    belongs_to :school, School
     belongs_to :user, User
 
     # Принадлежит классу User

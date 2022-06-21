@@ -9,5 +9,5 @@ defmodule Spellbook.Spellbooks.Commands.CreateSpell do
   end
 end
 
-#{a, b} = Spellbook.Accounts.get_user(1)
+# {a, b} = Spellbook.Accounts.get_user(1)
 # Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "kek", level: 1, schools: "lol", components: "hah", time: "12 lol", durations: "koko", area: 2, user_id: b.id})

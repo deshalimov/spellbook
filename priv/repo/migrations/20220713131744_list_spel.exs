@@ -5,7 +5,7 @@ defmodule Spellbook.Repo.Migrations.ListSpel do
     create table(:spellist) do
       add(:name, :string)       # название
       add(:level, :integer)     # уровень
-      add(:schools, :string)    # школа
+      add(:school_id, references(:schools))    # школа
       add(:components, :string) # компоненты (V, S, M)
       add(:time, :string)       # время (1 действие, 1 минута)
       add(:durations, :string)  # продолжительность (раунд или 8 час или мгновенно)

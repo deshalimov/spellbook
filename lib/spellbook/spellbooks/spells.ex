@@ -17,5 +17,5 @@ defmodule Spellbook.Spellbooks do
 
   # Queries
   defdelegate get_spell(id), to: GetSpell, as: :process
-  defdelegate list_spells(), to: ListSpells, as: :process
+  # defdelegate list_spells(), to: ListSpells, as: :process
 end

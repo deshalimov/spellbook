@@ -17,3 +17,19 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+
+  commands:
+
+1. Create spell
+# {a, b} = Spellbook.Accounts.get_user(1)
+# Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "kek", level: 1, school_id: d.id , components: "hah", time: "12 lol", durations: "koko", area: 2, damage: "damag", user_id: b.id})
+
+2. Create school
+# Spellbook.Schools.Commands.CreateSchool.process(%{nameSchool: "Evocation"})
+
+3. Create user
+# Spellbook.Accounts.Commands.CreateUser.process(%{email: "123@gmail.com", password: "12432431"})
+
+4. Get school
+# {c, d} = Spellbook.Schools.Queries.GetSchool.process(1)
