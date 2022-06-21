@@ -26,8 +26,8 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
     :time,
     :durations,
     :area,
-    :damage,
-    :user_id
+    :damage_id,
+    #:user_id
   ]
 
   schema "spellist" do
@@ -41,10 +41,10 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
     field :time,       :string
     field :durations,  :string
     field :area,       :integer
-    field :damage,     :string
 
+    belongs_to :damage, Damage
     belongs_to :school, School
-    belongs_to :user, User
+    #belongs_to :user, User
 
     # Принадлежит классу User
     #belongs_to :user, User
@@ -59,17 +59,18 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
     spell
     #|> Repo.preload(:items)
     |> cast(attrs, @required)
-    # |> validate_required(@required)
+    |> validate_required(@required)
 
-    # |> validate_format(:name, less_than_or_equal_to: 30, greater_than_or_equal_to: 1)
-    # #|> validate_format(:level, ~r/^[0-9]{1,20}$/, message: "invalid_format")
-    # |> validate_format(:level, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    # |> validate_format(:schools, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    # |> validate_format(:components, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    # |> validate_format(:time, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    # |> validate_format(:durations, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-    # |> validate_format(:area, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
-     |> assoc_constraint(:user)
+    |> validate_format(:name, ~r/^[a-zA-Z ]*$/, message: "invalid_format_name")
+     #|> validate_format(:level, ~r/^[0-9]{1,20}$/, message: "invalid_format")
+    |> validate_number(:level, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    |> validate_format(:components, ~r/^[A-Z, ]*[A-Z]$/, message: "invalid_format_components")
+    |> validate_format(:time, ~r/^[0-9 ]*[a-z]*$/, message: "invalid_format_time")
+    |> validate_format(:durations, ~r/^[a-zA-Z\s]*$/, message: "invalid_format_durations")
+    |> validate_number(:area, less_than_or_equal_to: 20, greater_than_or_equal_to: 1)
+    # |> assoc_constraint(:user)
+    |> assoc_constraint(:school)
+    |> assoc_constraint(:damage)
     # |> unique_constraint(:email, message: "taken")
     # |> validate_format(:password, ~r/^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}/,
     #   message: "invalid_format"

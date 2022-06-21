@@ -1,11 +1,16 @@
 defmodule Spellbook.Schools.Entities.School do
   use Ecto.Schema
+
   import Ecto.Changeset
+
+  alias Spellbook.Spellbooks.Entities.Spell
 
   @required [:nameSchool]
 
   schema "schools" do
     field :nameSchool, :string
+
+    has_many :spellist, Spell
 
     timestamps()
   end

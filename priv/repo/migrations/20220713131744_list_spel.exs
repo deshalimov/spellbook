@@ -10,8 +10,8 @@ defmodule Spellbook.Repo.Migrations.ListSpel do
       add(:time, :string)       # время (1 действие, 1 минута)
       add(:durations, :string)  # продолжительность (раунд или 8 час или мгновенно)
       add(:area, :integer)      # площадь поражения ( в футах или на себя)
-      add(:damage, :string)     # урон
-      add(:user_id, references(:users))
+      add(:damage_id, references(:damages))     # урон
+      # add(:user_id, references(:users))
 
       timestamps()
   end

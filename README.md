@@ -21,15 +21,24 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
   commands:
 
-1. Create spell
-# {a, b} = Spellbook.Accounts.get_user(1)
-# Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "kek", level: 1, school_id: d.id , components: "hah", time: "12 lol", durations: "koko", area: 2, damage: "damag", user_id: b.id})
-
-2. Create school
+Create school
 # Spellbook.Schools.Commands.CreateSchool.process(%{nameSchool: "Evocation"})
 
-3. Create user
-# Spellbook.Accounts.Commands.CreateUser.process(%{email: "123@gmail.com", password: "12432431"})
+Create user
+# Spellbook.Accounts.Commands.CreateUser.process(%{email: "123@gmail.com", password: "12432dadw431"})
 
-4. Get school
+Create damage
+# Spellbook.Damages.Commands.CreateDamage.process(%{nameDamage: "Damage"})
+
+!!! Create spell
+# Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "Hello wds", level: 1, school_id: d.id , components: "S, D, A", time: "12 lol", durations: "koko", area: 2, damage_id: f.id})
+
+
+Get user 
+# {a, b} = Spellbook.Accounts.get_user(1)
+
+Get school
 # {c, d} = Spellbook.Schools.Queries.GetSchool.process(1)
+
+Get damage
+# {e, f} = Spellbook.Damages.Queries.GetDamage.process(1)
