@@ -33,6 +33,8 @@ Create damage
 !!! Create spell
 # Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "Hello wds", level: 1, school_id: d.id , components: "S, D, A", time: "12 lol", durations: "koko", area: 2, damage_id: f.id})
 
+Create spelllist for users
+# 
 
 Get user 
 # {a, b} = Spellbook.Accounts.get_user(1)
@@ -42,3 +44,10 @@ Get school
 
 Get damage
 # {e, f} = Spellbook.Damages.Queries.GetDamage.process(1)
+
+Get spell
+# {g, h} = Spellbook.Spellbooks.Queries.GetSpell.process(1)
+
+
+Many to many
+# Spellbook.CommandSpellbook.AddSpell.process(%{users_id: b.id, spellist_id: h.id})

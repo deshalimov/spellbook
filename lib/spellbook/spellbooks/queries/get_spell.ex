@@ -1,8 +1,8 @@
-defmodule Spellbook.Spellbooks.Queries.GetSpellbook do
+defmodule Spellbook.Spellbooks.Queries.GetSpell do
   alias Spellbook.Repo
-  alias Spellbook.Spellbooks.Entities.Spellbook
+  alias Spellbook.Spellbooks.Entities.Spell
 
   def process(id) do
-    Repo.find(Spellbook, id)
+    Repo.find(Spell, id)
   end
 end

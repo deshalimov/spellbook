@@ -44,6 +44,8 @@ defmodule Spellbook.Spellbooks.Entities.Spell do
 
     belongs_to :damage, Damage
     belongs_to :school, School
+
+    many_to_many :users, Spellbook.Accounts.Entities.User, join_through: "spellbook_user"
     #belongs_to :user, User
 
     # Принадлежит классу User

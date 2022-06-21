@@ -10,6 +10,8 @@ defmodule Spellbook.Accounts.Entities.User do
     field :password,      :string, virtual: true
     field :password_hash, :string
 
+    many_to_many :spellist, Spellbook.Spellbooks.Entities.Spell, join_through: "spellbook_user"
+
     timestamps()
   end
 
