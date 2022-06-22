@@ -6,7 +6,8 @@ defmodule Spellbook.Schools do
   }
 
   alias Spellbook.Schools.Queries.{
-    GetSchool
+    GetSchool,
+    ListSchools
   }
 
   # Commands
@@ -16,5 +17,5 @@ defmodule Spellbook.Schools do
 
   # Queries
   defdelegate get_school(id), to: GetSchool, as: :process
-  # defdelegate list_schools(), to: ListSchools, as: :process
+  defdelegate list_schools(), to: ListSchools, as: :process
 end

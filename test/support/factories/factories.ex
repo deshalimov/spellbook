@@ -3,6 +3,7 @@ defmodule Spellbook.Factories do
 
   use Spellbook.Factories.{
     Accounts.UserFactory,
-    Damages.DamageFactory
+    Damages.DamageFactory,
+    Schools.SchoolFactory
   }
 end
