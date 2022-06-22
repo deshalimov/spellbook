@@ -5,6 +5,11 @@ defmodule Spellbook.Damages do
     UpdateDamage
   }
 
+  alias Spellbook.Damages.Queries.{
+    GetDamage,
+    ListDamages
+  }
+
   # Commands
   defdelegate create_damage(attrs), to: CreateDamage, as: :process
   defdelegate delete_damage(damage), to: DeleteDamage, as: :process
@@ -12,5 +17,5 @@ defmodule Spellbook.Damages do
 
   # Queries
   defdelegate get_damage(id), to: GetDamage, as: :process
-  # defdelegate list_damages(), to: ListDamages, as: :process
+  defdelegate list_damages(), to: ListDamages, as: :process
 end

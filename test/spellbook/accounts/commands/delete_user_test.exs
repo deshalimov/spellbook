@@ -2,7 +2,6 @@ defmodule Spellbook.Accounts.Commands.DeleteUserTest do
    use Spellbook.DataCase
 
   alias Spellbook.Accounts
-  alias Spellbook.Repo
 
   @tag :dlus
   test "process/1 delete_user test" do

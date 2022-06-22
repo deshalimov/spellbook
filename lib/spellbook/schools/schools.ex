@@ -5,6 +5,9 @@ defmodule Spellbook.Schools do
     UpdateSchool
   }
 
+  alias Spellbook.Schools.Queries.{
+    GetSchool
+  }
 
   # Commands
   defdelegate create_school(attrs), to: CreateSchool, as: :process
