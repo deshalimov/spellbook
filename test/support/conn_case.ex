@@ -23,6 +23,7 @@ defmodule SpellbookWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import SpellbookWeb.ConnCase
+      import Spellbook.DataCase
 
       alias SpellbookWeb.Router.Helpers, as: Routes
 
