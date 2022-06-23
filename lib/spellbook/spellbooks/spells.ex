@@ -7,7 +7,8 @@ defmodule Spellbook.Spellbooks do
 
   alias Spellbook.Spellbooks.Queries.{
     GetSpell,
-    ListSpells
+    ListSpells,
+    SpellByParams
   }
 
   # Commands

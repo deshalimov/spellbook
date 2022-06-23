@@ -7,7 +7,8 @@ defmodule Spellbook.Schools do
 
   alias Spellbook.Schools.Queries.{
     GetSchool,
-    ListSchools
+    ListSchools,
+    SchoolByName
   }
 
   # Commands

@@ -7,7 +7,8 @@ defmodule Spellbook.Damages do
 
   alias Spellbook.Damages.Queries.{
     GetDamage,
-    ListDamages
+    ListDamages,
+    DamageByName
   }
 
   # Commands
