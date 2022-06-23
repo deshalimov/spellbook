@@ -26,6 +26,7 @@ config :spellbook, SpellbookWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :spellbook, Spellbook.Mailer, adapter: Swoosh.Adapters.Local
 
+config :charlist, Spellbook.Accounts.Services.Guardian, issuer: "spellbook"
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
 

@@ -1,6 +1,15 @@
 defmodule SpellbookWeb.Router do
   use SpellbookWeb, :router
 
+  pipeline :user_auth do
+    plug Spellbook.Accounts.Guardian.Pipeline
+  end
+
+  pipeline :ensure_auth do
+    plug Guardian.Plug.EnsureAuthenticated
+    plug SpellbookWeb.CurrentUserPlug
+  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -21,9 +30,13 @@ defmodule SpellbookWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SpellbookWeb do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", SpellbookWeb.V1 do
+    pipe_through [:api, :user_auth]
+
+    post "/users", UserController, :create
+
+    pipe_through [:ensure_auth]
+  end
 
   # Enables LiveDashboard only for development
   #
@@ -41,6 +54,8 @@ defmodule SpellbookWeb.Router do
       live_dashboard "/dashboard", metrics: SpellbookWeb.Telemetry
     end
   end
+
+
 
   # Enables the Swoosh mailbox preview in development.
   #

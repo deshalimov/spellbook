@@ -23,7 +23,10 @@ defmodule SpellbookWeb do
 
       import Plug.Conn
       import SpellbookWeb.Gettext
+
+      alias SpellbookWeb.ApplyParams
       alias SpellbookWeb.Router.Helpers, as: Routes
+      alias Plug.Conn
     end
   end
 
