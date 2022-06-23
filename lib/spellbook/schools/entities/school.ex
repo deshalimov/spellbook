@@ -19,6 +19,7 @@ defmodule Spellbook.Schools.Entities.School do
   def create_changeset(%__MODULE__{} = school, attrs) do
     school
     |> cast(attrs, @required)
+    |> validate_required(@required)
     |> validate_format(:nameSchool, ~r/^[a-zA-Z]*$/, message: "invalid_format")
     |> unique_constraint(:school, message: "Such a school already exists")
   end
@@ -26,6 +27,7 @@ defmodule Spellbook.Schools.Entities.School do
   def update_changeset(%__MODULE__{} = school, attrs) do
     school
     |> cast(attrs, @required)
+    |> validate_required(@required)
     |> validate_format(:nameSchool, ~r/^[a-zA-Z]*$/, message: "invalid_format")
     |> unique_constraint(:school, message: "Such a school already exists")
   end

@@ -19,6 +19,7 @@ defmodule Spellbook.Damages.Entities.Damage do
   def create_changeset(%__MODULE__{} = damage, attrs) do
     damage
     |> cast(attrs, @required)
+    |> validate_required(@required)
     |> validate_format(:nameDamage, ~r/^[a-zA-Z]*$/, message: "invalid_format")
     |> unique_constraint(:damage, message: "Such a damage already exists")
   end
@@ -26,6 +27,7 @@ defmodule Spellbook.Damages.Entities.Damage do
   def update_changeset(%__MODULE__{} = damage, attrs) do
     damage
     |> cast(attrs, @required)
+    |> validate_required(@required)
     |> validate_format(:nameDamage, ~r/^[a-zA-Z]*$/, message: "invalid_format")
     |> unique_constraint(:damage, message: "Such a damage already exists")
   end

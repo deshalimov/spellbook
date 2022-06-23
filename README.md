@@ -18,36 +18,34 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
 
-
-  commands:
+## Commands:
 
 Create school
-# Spellbook.Schools.Commands.CreateSchool.process(%{nameSchool: "Evocation"})
+* Spellbook.Schools.Commands.CreateSchool.process(%{nameSchool: "Evocation"})
 
 Create user
-# Spellbook.Accounts.Commands.CreateUser.process(%{email: "123@gmail.com", password: "12432dadw431"})
+* Spellbook.Accounts.Commands.CreateUser.process(%{email: "123@gmail.com", password: "12432dadw431"})
 
 Create damage
-# Spellbook.Damages.Commands.CreateDamage.process(%{nameDamage: "Damage"})
+* Spellbook.Damages.Commands.CreateDamage.process(%{nameDamage: "Damage"})
 
 !!! Create spell
-# Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "Hello wds", level: 1, school_id: d.id , components: "S, D, A", time: "12 lol", durations: "koko", area: 2, damage_id: f.id})
+* Spellbook.Spellbooks.Commands.CreateSpell.process(%{name: "Hello wds", level: 1, school_id: d.id , components: "S, D, A", time: "12 lol", durations: "koko", area: 2, damage_id: f.id})
 
-Create spelllist for users
-# 
+Create spelllist for users:
 
-Get user 
-# {a, b} = Spellbook.Accounts.get_user(1)
+Get user:
+* {a, b} = Spellbook.Accounts.get_user(1)
 
-Get school
-# {c, d} = Spellbook.Schools.Queries.GetSchool.process(1)
+Get school:
+* {c, d} = Spellbook.Schools.Queries.GetSchool.process(1)
 
-Get damage
-# {e, f} = Spellbook.Damages.Queries.GetDamage.process(1)
+Get damage:
+* {e, f} = Spellbook.Damages.Queries.GetDamage.process(1)
 
-Get spell
-# {g, h} = Spellbook.Spellbooks.Queries.GetSpell.process(1)
+Get spell:
+* {g, h} = Spellbook.Spellbooks.Queries.GetSpell.process(1)
 
 
-Many to many
-# Spellbook.CommandSpellbook.AddSpell.process(%{users_id: b.id, spellist_id: h.id})
+Many to many:
+* Spellbook.CommandSpellbook.AddSpell.process(%{users_id: b.id, spellist_id: h.id})
